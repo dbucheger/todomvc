@@ -1,0 +1,21 @@
+body {
+	max-width: 100%;
+	width: 100%;
+}
+
+.todo-wrapper {
+	align-items: center;
+	display: flex;
+	flex-flow: column nowrap;
+	margin-top: 50px;
+}
+
+.todoapp {
+	margin: 130px 0 0 0;
+	min-width: 500px;
+	max-width: 768px;
+}
+
+.footer {
+	padding: 10px 15px 30px;
+}

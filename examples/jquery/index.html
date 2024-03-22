@@ -9,28 +9,34 @@
         <link rel="stylesheet" href="node_modules/todomvc-common/base.css">
         <link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
         <link rel="stylesheet" href="src/app.css">
+		<!-- Bootstrap -->
+		<link href="src/bootstrap2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<!-- Bootstrap overrides -->
+		<link rel="stylesheet" href="src/bs-overrides.css">
     </head>
     <body>
-        <section id="todoapp" class="todoapp">
-            <header id="header" class="header">
-                <h1>todos</h1>
-                <input id="new-todo" class="new-todo" placeholder="What needs to be done?" autofocus>
-            </header>
-            <main id="main" class="main">
-                <div class="toggle-all-container">
-                    <input id="toggle-all" class="toggle-all" type="checkbox">
-                    <label for="toggle-all">Mark all as complete</label>
-                </div>
-                <ul id="todo-list" class="todo-list"></ul>
-            </main>
-            <footer id="footer" class="footer"></footer>
-        </section>
-        <footer id="info" class="info">
-            <p>Double-click to edit a todo</p>
-            <p>Created by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
-            <p>Updated by the TodoMVC Team</p>
-            <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-        </footer>
+		<div class="todo-wrapper">
+			<section id="todoapp" class="todoapp">
+				<header id="header" class="header">
+					<h1>todos</h1>
+					<input id="new-todo" class="new-todo" placeholder="What needs to be done?" autofocus>
+				</header>
+				<main id="main" class="main">
+					<div class="toggle-all-container">
+						<input id="toggle-all" class="toggle-all" type="checkbox">
+						<label for="toggle-all">Mark all as complete</label>
+					</div>
+					<ul id="todo-list" class="todo-list"></ul>
+				</main>
+				<footer id="footer" class="footer"></footer>
+			</section>
+			<footer id="info" class="info">
+				<p>Double-click to edit a todo</p>
+				<p>Created by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+				<p>Updated by the TodoMVC Team</p>
+				<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+			</footer>
+		</div>
         <script id="todo-template" type="text/x-handlebars-template">
             {{#this as |item index|}}
             <li class="{{#if item.completed}} completed{{/if}}" data-id="{{item.id}}"">
@@ -47,21 +53,22 @@
             <span id="todo-count" class="todo-count"><strong>{{activeTodoCount}}</strong> {{activeTodoWord}} left</span>
             <ul id="filters" class="filters">
                 <li>
-                    <a {{#eq filter 'all'}}class="selected"{{/eq}} href="#/all">All</a>
+                    <a class="btn btn-info {{#eq filter 'all'}}selected{{/eq}}" href="#/all">All</a>
                 </li>
                 <li>
-                    <a {{#eq filter 'active'}}class="selected"{{/eq}}href="#/active">Active</a>
+                    <a class="btn btn-link {{#eq filter 'active'}}selected{{/eq}}" href="#/active">Active</a>
                 </li>
                 <li>
-                    <a {{#eq filter 'completed'}}class="selected"{{/eq}}href="#/completed">Completed</a>
+                    <a class="btn btn-link {{#eq filter 'completed'}}selected{{/eq}}" href="#/completed">Completed</a>
                 </li>
             </ul>
-            {{#if completedTodos}}<button class="clear-completed">Clear completed</button>{{/if}}
+            {{#if completedTodos}}<button class="btn btn-danger clear-completed"><i class="icon-trash"></i>Clear completed</button>{{/if}}
         </script>
         <!-- <script src="node_modules/todomvc-common/base.js"></script> -->
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
         <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
         <script src="node_modules/director/build/director.min.js"></script>
+		<script src="src/bootstrap2/js/bootstrap.min.js"></script>
         <script src="src/app.js"></script>
     </body>
 </html>
