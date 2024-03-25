@@ -13,6 +13,7 @@
 		<link href="src/bootstrap2/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<!-- Bootstrap overrides -->
 		<link rel="stylesheet" href="src/bs-overrides.css">
+		<link rel="stylesheet" href="src/dreamcoat/ui-components-lib-wc.css">
     </head>
     <body>
 		<div class="todo-wrapper">
@@ -50,25 +51,36 @@
         {{/this}}
         </script>
         <script id="footer-template" type="text/x-handlebars-template">
-            <span id="todo-count" class="todo-count"><strong>{{activeTodoCount}}</strong> {{activeTodoWord}} left</span>
-            <ul id="filters" class="filters">
-                <li>
-                    <a class="btn btn-info {{#eq filter 'all'}}selected{{/eq}}" href="#/all">All</a>
-                </li>
-                <li>
-                    <a class="btn btn-link {{#eq filter 'active'}}selected{{/eq}}" href="#/active">Active</a>
-                </li>
-                <li>
-                    <a class="btn btn-link {{#eq filter 'completed'}}selected{{/eq}}" href="#/completed">Completed</a>
-                </li>
+            <dc-tooltip direction="top" title="Toggle visibility of items with the filters">
+				<span id="todo-count" class="todo-count"><strong>{{activeTodoCount}}</strong> {{activeTodoWord}} left</span>
+			</dc-tooltip>
+			<ul id="filters" class="filters">
+				<li>
+					<dc-button class="all-button" label="All" size="md" variant="text" icon-left-family="regular"
+					icon-left="filter" onclick="location = '#/all'"></dc-button>
+				</li>
+				<li>
+					<dc-button class="active-button" label="Active" size="md" variant="text" icon-left-family="regular"
+					icon-left="filter" onclick="location = '#/active'"></dc-button>
+				</li>
+				<li>
+					<dc-button class="completed-button" label="Completed" size="md" variant="text" icon-left-family="regular"
+					icon-left="filter" onclick="location = '#/completed'"></dc-button>
+				</li>
             </ul>
-            {{#if completedTodos}}<button class="btn btn-danger clear-completed"><i class="icon-trash"></i>Clear completed</button>{{/if}}
+            {{#if completedTodos}}<dc-button class="clear-completed" label="Clear completed" size="md" variant="danger" icon-left="trash"
+			icon-left="filter"></dc-button>{{/if}}
         </script>
         <!-- <script src="node_modules/todomvc-common/base.js"></script> -->
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
         <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
         <script src="node_modules/director/build/director.min.js"></script>
 		<script src="src/bootstrap2/js/bootstrap.min.js"></script>
-        <script src="src/app.js"></script>
+
+		<script type="module">
+			import "./src/dreamcoat/ui-components-lib-wc.js";
+		</script>
+
+		<script src="src/app.js"></script>
     </body>
 </html>

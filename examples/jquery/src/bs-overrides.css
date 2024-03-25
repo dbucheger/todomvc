@@ -17,5 +17,11 @@ body {
 }
 
 .footer {
+	height: 50px;
 	padding: 10px 15px 30px;
+}
+
+.filters {
+	padding: 0 0 10px;
+	position: static;
 }
