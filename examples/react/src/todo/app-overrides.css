@@ -1,0 +1,21 @@
+body {
+	display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+	margin: 0 auto !important;
+    max-width: 100%;
+}
+
+.todoapp {
+	min-width: 500px;
+}
+
+.footer {
+	height: 50px;
+	padding: 10px 15px 30px;
+}
+
+.filters {
+	padding: 0 0 10px;
+	position: static !important;
+}
