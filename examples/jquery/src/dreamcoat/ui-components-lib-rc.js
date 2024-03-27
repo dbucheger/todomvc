@@ -1,5 +1,6 @@
 import { DcButton as N, DcIcon as E, DcTooltip as g } from "./ui-components-lib-wc.js";
 import f from "react";
+import "./chunk-N06kCzeu.js";
 /**
  * @license
  * Copyright 2018 Google LLC
@@ -32,24 +33,24 @@ const b = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "cla
     }, [c]) });
   });
   return s.displayName = u ?? a.name, s;
-}, L = v({
+}, T = v({
   react: f,
   tagName: "dc-button",
   elementClass: N,
   displayName: "DcButton"
-}), T = v({
+}), B = v({
   react: f,
   tagName: "dc-icon",
   elementClass: E,
   displayName: "DcIcon"
-}), B = v({
+}), I = v({
   react: f,
   tagName: "dc-tooltip",
   elementClass: g,
   displayName: "DcTooltip"
 });
 export {
-  L as DcButton,
-  T as DcIcon,
-  B as DcTooltip
+  T as DcButton,
+  B as DcIcon,
+  I as DcTooltip
 };
