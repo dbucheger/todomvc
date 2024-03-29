@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import classnames from "classnames";
 
 import { REMOVE_COMPLETED_ITEMS } from "../constants";
+import { DcButton, DcTooltip } from "../../dreamcoat/ui-components-lib-rc";
 
 export function Footer({ todos, dispatch }) {
     const { pathname: route } = useLocation();
@@ -10,6 +11,7 @@ export function Footer({ todos, dispatch }) {
     const activeTodos = useMemo(() => todos.filter((todo) => !todo.completed), [todos]);
 
     const removeCompleted = useCallback(() => dispatch({ type: REMOVE_COMPLETED_ITEMS }), [dispatch]);
+	const triggerConsoleLog = useCallback(() => (console.log("click handler triggered")));
 
     // prettier-ignore
     if (todos.length === 0)
@@ -17,27 +19,24 @@ export function Footer({ todos, dispatch }) {
 
     return (
         <footer className="footer" data-testid="footer">
-            <span className="todo-count">{`${activeTodos.length} ${activeTodos.length === 1 ? "item" : "items"} left!`}</span>
+			<DcTooltip direction="top" title="Toggle visibility of items with the filters">
+            	<span className="todo-count">{`${activeTodos.length} ${activeTodos.length === 1 ? "item" : "items"} left!`}</span>
+			</DcTooltip>
             <ul className="filters" data-testid="footer-navigation">
                 <li>
-                    <a className={classnames({ selected: route === "/" })} href="#/">
-                        All
-                    </a>
+					<DcButton className="all-button" label="All" size="md" variant="text-primary" icon-left-family="regular"
+						icon-left="filter" onClick={triggerConsoleLog} />
                 </li>
                 <li>
-                    <a className={classnames({ selected: route === "/active" })} href="#/active">
-                        Active
-                    </a>
+					<DcButton className="active-button" label="Active" size="md" variant="text" icon-left-family="regular"
+						icon-left="filter" onClick={triggerConsoleLog} />
                 </li>
                 <li>
-                    <a className={classnames({ selected: route === "/completed" })} href="#/completed">
-                        Completed
-                    </a>
+					<DcButton className="completed-button" label="Completed" size="md" variant="text" icon-left-family="regular"
+						icon-left="filter" onClick={triggerConsoleLog} />
                 </li>
             </ul>
-            <button className="clear-completed" disabled={activeTodos.length === todos.length} onClick={removeCompleted}>
-                Clear completed
-            </button>
+			<DcButton className="clear-completed" label="Clear completed" size="md" variant="text-danger" disabled={activeTodos.length === todos.length} onClick={removeCompleted} />
         </footer>
     );
 }

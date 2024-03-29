@@ -6,6 +6,7 @@ import { Footer } from "./components/footer";
 import { todoReducer } from "./reducer";
 
 import "./app.css";
+import "./app-overrides.css";
 
 export function App() {
     const [todos, dispatch] = useReducer(todoReducer, []);
