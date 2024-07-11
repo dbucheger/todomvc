@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import classnames from "classnames";
 
 import { REMOVE_COMPLETED_ITEMS } from "../constants";
-import { DcButton, DcTooltip } from "../../dreamcoat/ui-components-lib-rc";
+import { DcButton, DcIcon } from "../../dreamcoat/ui-components-lib-rc";
 
 export function Footer({ todos, dispatch }) {
     const { pathname: route } = useLocation();
@@ -19,9 +19,7 @@ export function Footer({ todos, dispatch }) {
 
     return (
         <footer className="footer" data-testid="footer">
-			<DcTooltip direction="top" title="Toggle visibility of items with the filters">
-            	<span className="todo-count">{`${activeTodos.length} ${activeTodos.length === 1 ? "item" : "items"} left!`}</span>
-			</DcTooltip>
+			<DcIcon name="bug" family="solid" size="xl"/><span className="todo-count">{`${activeTodos.length} ${activeTodos.length === 1 ? "item" : "items"} left!`}</span>
             <ul className="filters" data-testid="footer-navigation">
                 <li>
 					<DcButton className="all-button" label="All" size="md" variant="text-primary" icon-left-family="regular"
