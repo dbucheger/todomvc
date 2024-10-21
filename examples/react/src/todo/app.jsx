@@ -26,7 +26,7 @@ export function App() {
 				<DcNavSidebar>
 					<div slot="logo">
 						<a href="/">
-							<DcIcon name="bug" family="regular" size="lg" />
+							<DcIcon name="cloud" family="regular" size="xl" />
 						</a>
 					</div>
 					<div slot="upper-nav">

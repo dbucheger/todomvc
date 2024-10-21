@@ -19,7 +19,7 @@ export function Footer({ todos, dispatch }) {
 
     return (
         <footer className="footer" data-testid="footer">
-			<DcIcon name="bug" family="solid" size="xl"/><span className="todo-count">{`${activeTodos.length} ${activeTodos.length === 1 ? "item" : "items"} left!`}</span>
+			<span className="todo-count">{`${activeTodos.length} ${activeTodos.length === 1 ? "item" : "items"} left!`}</span>
             <ul className="filters" data-testid="footer-navigation">
                 <li>
 					<DcTooltip tooltipTitle="All" direction="top" tooltipTrigger="hover">
