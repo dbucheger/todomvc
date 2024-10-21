@@ -1,13 +1,16 @@
 body {
-	display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-	margin: 0 auto !important;
-    max-width: 100%;
+	max-width: 100% !important;
+}
+
+.wrapper {
+    left: 84px;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 84px);
 }
 
 .todoapp {
-	min-width: 500px;
+	min-width: 360px;
 }
 
 .footer {
@@ -18,4 +21,8 @@ body {
 .filters {
 	padding: 0 0 10px;
 	position: static !important;
+}
+
+.todoapp header > h1 {
+	width: 80%;
 }
