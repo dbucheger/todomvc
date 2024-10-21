@@ -1,56 +1,241 @@
-import { DcButton as N, DcIcon as E, DcTooltip as g } from "./ui-components-lib-wc.js";
-import f from "react";
-import "./chunk-N06kCzeu.js";
+var b = Object.defineProperty, w = Object.defineProperties;
+var I = Object.getOwnPropertyDescriptors;
+var g = Object.getOwnPropertySymbols;
+var $ = Object.prototype.hasOwnProperty, M = Object.prototype.propertyIsEnumerable;
+var S = (a, c, n) => c in a ? b(a, c, { enumerable: !0, configurable: !0, writable: !0, value: n }) : a[c] = n, v = (a, c) => {
+  for (var n in c || (c = {}))
+    $.call(c, n) && S(a, n, c[n]);
+  if (g)
+    for (var n of g(c))
+      M.call(c, n) && S(a, n, c[n]);
+  return a;
+}, h = (a, c) => w(a, I(c));
+import { DCDropdown as f, DCDropdownButton as B, DCMenu as P, DCMenuItem as T, DCMenuItemAdd as L, DcNavbar as A, DcNavSidebar as k, DcNavItem as E, DcNavSubmenu as G, DcSubmenuSection as H, DcSubmenuItem as F, DCAvatar as R, DCBanner as j, DcButton as O, DcChip as W, DCHalfDonutLoader as x, DcIcon as q, DCInputField as z, DCListGroup as J, DCListGroupItem as K, DcModal as Q, DCPill as U, DcSearchBar as V, DCTable as X, DCToast as Y, DCToggleSwitch as Z, DcTooltip as _, DCProductSwitcher as ee, DCProductSwitcherButton as te, DCProductSwitcherMenu as ae, DCProductSwitcherMenuItem as ce } from "./ui-components-lib-wc.js";
+import e from "react";
 /**
  * @license
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const b = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "className"]), D = /* @__PURE__ */ new WeakMap(), h = (t, l, a, i, u) => {
-  const m = u == null ? void 0 : u[l];
-  m === void 0 || a === i ? (t[l] = a, a == null && l in HTMLElement.prototype && t.removeAttribute(l)) : ((s, o, c) => {
-    let r = D.get(s);
-    r === void 0 && D.set(s, r = /* @__PURE__ */ new Map());
-    let n = r.get(o);
-    c !== void 0 ? n === void 0 ? (r.set(o, n = { handleEvent: c }), s.addEventListener(o, n)) : n.handleEvent = c : n !== void 0 && (r.delete(o), s.removeEventListener(o, n));
-  })(t, m, a);
-}, v = ({ react: t, tagName: l, elementClass: a, events: i, displayName: u }) => {
-  const m = new Set(Object.keys(i ?? {})), s = t.forwardRef((o, c) => {
-    const r = t.useRef(null), n = t.useRef(null), d = {}, y = {};
-    for (const [e, p] of Object.entries(o))
-      b.has(e) ? d[e === "className" ? "class" : e] = p : m.has(e) || e in a.prototype ? y[e] = p : d[e] = p;
-    return t.useLayoutEffect(() => {
-      if (n.current !== null) {
-        for (const e in y)
-          h(n.current, e, o[e], r.current ? r.current[e] : void 0, i);
-        r.current = o;
+const ne = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "className"]), y = /* @__PURE__ */ new WeakMap(), se = (a, c, n, D, d) => {
+  const i = d == null ? void 0 : d[c];
+  i === void 0 || n === D ? (a[c] = n, n == null && c in HTMLElement.prototype && a.removeAttribute(c)) : ((u, r, l) => {
+    let m = y.get(u);
+    m === void 0 && y.set(u, m = /* @__PURE__ */ new Map());
+    let o = m.get(r);
+    l !== void 0 ? o === void 0 ? (m.set(r, o = { handleEvent: l }), u.addEventListener(r, o)) : o.handleEvent = l : o !== void 0 && (m.delete(r), u.removeEventListener(r, o));
+  })(a, i, n);
+}, t = ({ react: a, tagName: c, elementClass: n, events: D, displayName: d }) => {
+  const i = new Set(Object.keys(D != null ? D : {})), u = a.forwardRef((r, l) => {
+    const m = a.useRef(null), o = a.useRef(null), C = {}, N = {};
+    for (const [s, p] of Object.entries(r)) ne.has(s) ? C[s === "className" ? "class" : s] = p : i.has(s) || s in n.prototype ? N[s] = p : C[s] = p;
+    return a.useLayoutEffect(() => {
+      if (o.current !== null) {
+        for (const s in N) se(o.current, s, r[s], m.current ? m.current[s] : void 0, D);
+        m.current = r;
       }
-    }), t.useLayoutEffect(() => {
-      var e;
-      (e = n.current) == null || e.removeAttribute("defer-hydration");
-    }, []), d.suppressHydrationWarning = !0, t.createElement(l, { ...d, ref: t.useCallback((e) => {
-      n.current = e, typeof c == "function" ? c(e) : c !== null && (c.current = e);
-    }, [c]) });
+    }), a.useLayoutEffect(() => {
+      var s;
+      (s = o.current) == null || s.removeAttribute("defer-hydration");
+    }, []), C.suppressHydrationWarning = !0, a.createElement(c, h(v({}, C), { ref: a.useCallback((s) => {
+      o.current = s, typeof l == "function" ? l(s) : l !== null && (l.current = s);
+    }, [l]) }));
   });
-  return s.displayName = u ?? a.name, s;
-}, T = v({
-  react: f,
-  tagName: "dc-button",
-  elementClass: N,
-  displayName: "DcButton"
-}), B = v({
-  react: f,
-  tagName: "dc-icon",
+  return u.displayName = d != null ? d : n.name, u;
+}, me = t({
+  react: e,
+  tagName: "dc-dropdown",
+  elementClass: f,
+  displayName: "DCDropdown"
+}), de = t({
+  react: e,
+  tagName: "dc-dropdown-button",
+  elementClass: B,
+  displayName: "DCDropdownButton"
+}), ue = t({
+  react: e,
+  tagName: "dc-menu",
+  elementClass: P,
+  displayName: "DCMenu"
+}), De = t({
+  react: e,
+  tagName: "dc-menu-item",
+  elementClass: T,
+  displayName: "DCMenuItem",
+  events: {
+    onMenuItemClick: "menuitemclick",
+    onFavoriteClick: "favoriteclick",
+    onPinClick: "pinclick"
+  }
+}), ie = t({
+  react: e,
+  tagName: "dc-menu-item-add",
+  elementClass: L,
+  displayName: "DCMenuItemAdd"
+}), Ce = t({
+  react: e,
+  tagName: "dc-navbar",
+  elementClass: A,
+  displayName: "DcNavbar"
+}), pe = t({
+  react: e,
+  tagName: "dc-nav-sidebar",
+  elementClass: k,
+  displayName: "DcNavSidebar"
+}), Ne = t({
+  react: e,
+  tagName: "dc-nav-item",
   elementClass: E,
+  displayName: "DcNavItem"
+}), ge = t({
+  react: e,
+  tagName: "dc-nav-submenu",
+  elementClass: G,
+  displayName: "DcNavSubmenu"
+}), Se = t({
+  react: e,
+  tagName: "dc-submenu-section",
+  elementClass: H,
+  displayName: "DcSubmenuSection"
+}), ve = t({
+  react: e,
+  tagName: "dc-submenu-item",
+  elementClass: F,
+  displayName: "DcSubmenuItem"
+}), he = t({
+  react: e,
+  tagName: "dc-avatar",
+  elementClass: R,
+  displayName: "DCAvatar"
+}), ye = t({
+  react: e,
+  tagName: "dc-banner",
+  elementClass: j,
+  displayName: "DCBanner"
+}), be = t({
+  react: e,
+  tagName: "dc-button",
+  elementClass: O,
+  displayName: "DcButton"
+}), we = t({
+  react: e,
+  tagName: "dc-chip",
+  elementClass: W,
+  displayName: "DcChip"
+}), Ie = t({
+  react: e,
+  tagName: "dc-half-donut-loader",
+  elementClass: x,
+  displayName: "DCHalfDonutLoader"
+}), $e = t({
+  react: e,
+  tagName: "dc-icon",
+  elementClass: q,
   displayName: "DcIcon"
-}), I = v({
-  react: f,
+}), Me = t({
+  react: e,
+  tagName: "dc-input-field",
+  elementClass: z,
+  displayName: "DCInputField"
+}), fe = t({
+  react: e,
+  tagName: "dc-list-group",
+  elementClass: J,
+  displayName: "DCListGroup"
+}), Be = t({
+  react: e,
+  tagName: "dc-list-group-item",
+  elementClass: K,
+  displayName: "DCListGroupItem"
+}), Pe = t({
+  react: e,
+  tagName: "dc-modal",
+  elementClass: Q,
+  displayName: "DcModal"
+}), Te = t({
+  react: e,
+  tagName: "dc-pill",
+  elementClass: U,
+  displayName: "DCPill",
+  events: {
+    onMenuToggle: "menu-toggled"
+  }
+}), Le = t({
+  react: e,
+  tagName: "dc-search-bar",
+  elementClass: V,
+  displayName: "DcSearchBar"
+}), Ae = t({
+  react: e,
+  tagName: "dc-table",
+  elementClass: X,
+  displayName: "DCTable"
+}), ke = t({
+  react: e,
+  tagName: "dc-toast",
+  elementClass: Y,
+  displayName: "DCToast"
+}), Ee = t({
+  react: e,
+  tagName: "dc-toggle-switch",
+  elementClass: Z,
+  displayName: "DCToggleSwitch"
+}), Ge = t({
+  react: e,
   tagName: "dc-tooltip",
-  elementClass: g,
+  elementClass: _,
   displayName: "DcTooltip"
+}), He = t({
+  react: e,
+  tagName: "dc-product-switcher",
+  elementClass: ee,
+  displayName: "DCProductSwitcher"
+}), Fe = t({
+  react: e,
+  tagName: "dc-product-switcher-button",
+  elementClass: te,
+  displayName: "DCProductSwitcherButton"
+}), Re = t({
+  react: e,
+  tagName: "dc-product-switcher-menu",
+  elementClass: ae,
+  displayName: "DCProductSwitcherMenu"
+}), je = t({
+  react: e,
+  tagName: "dc-product-switcher-menu-item",
+  elementClass: ce,
+  displayName: "DCProductSwitcherMenuItem"
 });
 export {
-  T as DcButton,
-  B as DcIcon,
-  I as DcTooltip
+  he as DCAvatar,
+  me as DCDropdown,
+  de as DCDropdownButton,
+  Ie as DCHalfDonutLoader,
+  Me as DCInputField,
+  fe as DCListGroup,
+  Be as DCListGroupItem,
+  ue as DCMenu,
+  De as DCMenuItem,
+  ie as DCMenuItemAdd,
+  Te as DCPill,
+  He as DCProductSwitcher,
+  Fe as DCProductSwitcherButton,
+  Re as DCProductSwitcherMenu,
+  je as DCProductSwitcherMenuItem,
+  Ae as DCTable,
+  ke as DCToast,
+  Ee as DCToggleSwitch,
+  ye as DcBanner,
+  be as DcButton,
+  we as DcChip,
+  $e as DcIcon,
+  Pe as DcModal,
+  Ne as DcNavItem,
+  pe as DcNavSidebar,
+  ge as DcNavSubmenu,
+  Ce as DcNavbar,
+  Le as DcSearchBar,
+  ve as DcSubmenuItem,
+  Se as DcSubmenuSection,
+  Ge as DcTooltip
 };

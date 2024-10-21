@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import classnames from "classnames";
 
 import { REMOVE_COMPLETED_ITEMS } from "../constants";
-import { DcButton, DcIcon } from "../../dreamcoat/ui-components-lib-rc";
+import { DcButton, DcIcon, DcTooltip } from "../../dreamcoat/ui-components-lib-rc";
 
 export function Footer({ todos, dispatch }) {
     const { pathname: route } = useLocation();
@@ -22,8 +22,10 @@ export function Footer({ todos, dispatch }) {
 			<DcIcon name="bug" family="solid" size="xl"/><span className="todo-count">{`${activeTodos.length} ${activeTodos.length === 1 ? "item" : "items"} left!`}</span>
             <ul className="filters" data-testid="footer-navigation">
                 <li>
-					<DcButton className="all-button" label="All" size="md" variant="text-primary" icon-left-family="regular"
-						icon-left="filter" onClick={triggerConsoleLog} />
+					<DcTooltip tooltipTitle="All" direction="top" tooltipTrigger="hover">
+						<DcButton className="all-button" label="All" size="md" variant="text-primary" icon-left-family="regular"
+							icon-left="filter" onClick={triggerConsoleLog} />
+					</DcTooltip>
                 </li>
                 <li>
 					<DcButton className="active-button" label="Active" size="md" variant="text" icon-left-family="regular"
