@@ -12,8 +12,8 @@ var Ft = (s, t, e) => t in s ? qe(s, t, { enumerable: !0, configurable: !0, writ
 }, tt = (s, t) => Qe(s, Xe(t));
 import { l as me, c as ge } from "./chunk-Co1n7oHL.js";
 /*!
-  * Bootstrap v5.3.2 (https://getbootstrap.com/)
-  * Copyright 2011-2023 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Bootstrap v5.3.3 (https://getbootstrap.com/)
+  * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 const S = /* @__PURE__ */ new Map(), mt = {
@@ -297,7 +297,7 @@ class Q {
     }
   }
 }
-const ds = "5.3.2";
+const ds = "5.3.3";
 class A extends Q {
   constructor(t, e) {
     super(), t = y(t), t && (this._element = t, this._config = this._getConfig(e), mt.set(this._element, this.constructor.DATA_KEY, this));
@@ -340,9 +340,9 @@ const bt = (s) => {
     let e = s.getAttribute("href");
     if (!e || !e.includes("#") && !e.startsWith("."))
       return null;
-    e.includes("#") && !e.startsWith("#") && (e = `#${e.split("#")[1]}`), t = e && e !== "#" ? Ae(e.trim()) : null;
+    e.includes("#") && !e.startsWith("#") && (e = `#${e.split("#")[1]}`), t = e && e !== "#" ? e.trim() : null;
   }
-  return t;
+  return t ? t.split(",").map((e) => Ae(e)).join(",") : null;
 }, l = {
   find(s, t = document.documentElement) {
     return [].concat(...Element.prototype.querySelectorAll.call(t, s));
@@ -1460,7 +1460,10 @@ const Bi = /^aria-[\w-]*$/i, Ue = {
   br: [],
   col: [],
   code: [],
+  dd: [],
   div: [],
+  dl: [],
+  dt: [],
   em: [],
   hr: [],
   h1: [],
